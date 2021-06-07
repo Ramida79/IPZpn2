@@ -311,7 +311,6 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected String doInBackground(String... strings) {
 
-
             for (int i =1; i<10;i++)
             {
 
