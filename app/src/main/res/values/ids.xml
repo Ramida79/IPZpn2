@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="p2" type="id" />
+    <item name="p1" type="id" />
+    <item name="textView" type="id" />
+    <item name="checkBox" type="id" />
+    <item name="editTextNumber" type="id" />
+    <item name="progressBar" type="id" />
+</resources>
