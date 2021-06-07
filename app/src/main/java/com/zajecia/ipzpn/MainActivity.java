@@ -2,6 +2,7 @@ package com.zajecia.ipzpn;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -31,6 +32,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
+import static java.lang.Thread.sleep;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -65,6 +68,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Toast.makeText(getApplicationContext(),"Click on "+ String.valueOf(i),Toast.LENGTH_LONG).show();
+
+                final AsyncUpdate asyncTask = new AsyncUpdate();
+                asyncTask.execute("tekst");
             }
         });
 
@@ -297,5 +303,31 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+    class AsyncUpdate extends AsyncTask<String, String, String>
+    {
+
+
+        @Override
+        protected String doInBackground(String... strings) {
+
+
+            for (int i =1; i<10;i++)
+            {
+
+                tekst.setText("Licznik "+i);
+                try {
+                    sleep(2500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+
+
+
+
+            return null;
+        }
+    }
 
 }
